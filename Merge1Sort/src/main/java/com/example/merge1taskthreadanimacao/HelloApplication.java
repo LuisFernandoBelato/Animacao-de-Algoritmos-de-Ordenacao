@@ -47,7 +47,7 @@ public class HelloApplication extends Application {
         botao_inicio = new Button();
         botao_inicio.setLayoutX(650); botao_inicio.setLayoutY(570);
         botao_inicio.setText("Ordenar");
-        botao_inicio.setOnAction(e -> moveBotoes(pane));
+        botao_inicio.setOnAction(e -> MoveBotoes(pane));
         pane.getChildren().add(botao_inicio);
 
         vetor = new Button[Tam];
@@ -85,7 +85,7 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
-    public void moveBotoes(AnchorPane pane)
+    public void MoveBotoes(AnchorPane pane)
     {
         Task<Void> task = new Task<Void>() {
             @Override

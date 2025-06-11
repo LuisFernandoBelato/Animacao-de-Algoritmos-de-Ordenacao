@@ -40,7 +40,7 @@ public class HelloApplication extends Application {
         botao_inicio = new Button();
         botao_inicio.setLayoutX(650); botao_inicio.setLayoutY(570);
         botao_inicio.setText("Começar");
-        botao_inicio.setOnAction(e -> moveBotoes(pane));
+        botao_inicio.setOnAction(e -> MoveBotoes(pane));
         pane.getChildren().add(botao_inicio);
 
         vet = new Button[TL];
@@ -55,32 +55,32 @@ public class HelloApplication extends Application {
             pane.getChildren().add(vet[i]);
         }
 
-        comeco();
+        Comeco();
         Scene scene = new Scene(pane, 1000, 600);
         stage.setFullScreen(true);
         stage.setScene(scene);
         stage.show();
     }
 
-    public void moveBotoes(AnchorPane pane)
+    public void MoveBotoes(AnchorPane pane)
     {
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call () throws InterruptedException {
                 try
                 {
-                    remove();
+                    Remove();
                     dist = TL;
-                    durante();
+                    Durante();
                     while (dist > 0)
                     {
                         dist = (int) (dist/1.3);
                         for (i=0; i < (TL - dist); i++)
                         {
                             Destaca(vet[i],vet[i+dist]);
-                            textodobotao("COMPARA",normal,new Text(),vet[i],13);
+                            TextoDoBotao("COMPARA",normal,new Text(),vet[i],13);
                             try {Thread.sleep(800);} catch (InterruptedException e) {e.printStackTrace();}
-                            textodobotao("COMPARA",normal,new Text(),vet[i+dist],13);
+                            TextoDoBotao("COMPARA",normal,new Text(),vet[i+dist],13);
                             Normaliza(vet[i],vet[i+dist]);
                             try {Thread.sleep(800);} catch (InterruptedException e) {e.printStackTrace();}
                             if (Integer.parseInt(vet[i].getText()) > Integer.parseInt(vet[i+dist].getText()))
@@ -91,23 +91,23 @@ public class HelloApplication extends Application {
                                     vet[i+dist].setText(troca);
                                 });
                                 Destaca(vet[i],vet[i+dist]);
-                                textodobotao("TROCA !",negrito,new Text(),vet[i],15);
-                                textodobotao("TROCA !",negrito,new Text(),vet[i+dist],15);
+                                TextoDoBotao("TROCA !",negrito,new Text(),vet[i],15);
+                                TextoDoBotao("TROCA !",negrito,new Text(),vet[i+dist],15);
                                 Thread.sleep(1400);
                                 Normaliza(vet[i],vet[i+dist]);
 
                             }
                             else
                             {
-                                textodobotao("MANTÊM",normal,new Text(),vet[i],11);
+                                TextoDoBotao("MANTÊM",normal,new Text(),vet[i],11);
                                 try {Thread.sleep(800);} catch (InterruptedException e) {e.printStackTrace();}
-                                textodobotao("MANTÊM",normal,new Text(),vet[i+dist],11);
+                                TextoDoBotao("MANTÊM",normal,new Text(),vet[i+dist],11);
                                 try {Thread.sleep(800);} catch (InterruptedException e) {e.printStackTrace();}
                             }
                         }
                     }
-                    remove();
-                    fim();
+                    Remove();
+                    Fim();
                 } catch (Exception e) {
                     System.out.println("Deu Errado");
                 }
@@ -135,7 +135,7 @@ public class HelloApplication extends Application {
         });
     }
 
-    public void durante ()
+    public void Durante ()
     {
         Platform.runLater(() -> {
             tx1.setText("ORDENANDO...");
@@ -147,13 +147,13 @@ public class HelloApplication extends Application {
         try {Thread.sleep(800);} catch (InterruptedException e) {e.printStackTrace();}
     }
 
-    public void remove ()
+    public void Remove ()
     {
         Platform.runLater(() -> pane.getChildren().remove(tx1));
     }
 
 
-    public void textodobotao (String string, Font tipo,Text texto, Button botao, int ajuste)
+    public void TextoDoBotao (String string, Font tipo,Text texto, Button botao, int ajuste)
     {
         Platform.runLater(() -> {
             texto.setText(string);
@@ -166,7 +166,7 @@ public class HelloApplication extends Application {
         Platform.runLater(() -> pane.getChildren().remove(texto));
     }
 
-    public void textodobotaosematraso (String string, Font tipo,Text texto, Button botao, int ajuste)
+    public void TextoDoBotaoSemAtraso (String string, Font tipo,Text texto, Button botao, int ajuste)
     {
         Platform.runLater(() -> {
             texto.setText(string);
@@ -179,7 +179,7 @@ public class HelloApplication extends Application {
     }
 
 
-    public void comeco ()
+    public void Comeco ()
     {
         Platform.runLater(() -> {
             tx1.setText("PESQUISA E ORDENAÇÃO - COMB SORT");
@@ -192,7 +192,7 @@ public class HelloApplication extends Application {
     }
 
 
-    public void fim ()
+    public void Fim ()
     {
         Platform.runLater(() -> {
             tx1.setText("TODOS FORAM NÚMEROS ORDENADOS !");
