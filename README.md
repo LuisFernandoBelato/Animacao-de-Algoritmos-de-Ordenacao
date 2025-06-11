@@ -20,12 +20,11 @@ O projeto implementa os dois algoritmos de ordenação a seguir:
 *   **Comb Sort:** Conhecido por ser uma melhoria do Bubble Sort, que elimina "tartarugas" (pequenos valores no final de uma lista quase ordenada) usando um "gap" (lacuna) que diminui a cada iteração.
 *   **Merge Sort (1ª Implementação):** Um algoritmo de divisão e conquista que divide a lista em duas metades, ordena cada metade recursivamente e depois as funde (merge) para produzir uma lista ordenada. A "1ª Implementação" pode se referir a uma abordagem específica (ex: não recursiva completa ou uma variação inicial).
 
-## ⚙️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 *   **Linguagem de Programação:** Java
 *   **Framework de UI:** JavaFX
 *   **Sistema de Build:** Apache Maven
-*   **Ferramentas de Concorrência:** `javafx.concurrent.Task` e `java.lang.Thread` para realizar operações de ordenação em segundo plano sem bloquear a interface do usuário.
 
 ## Estrutura do Projeto
 
@@ -33,34 +32,32 @@ O projeto é organizado em dois sub-diretórios, cada um contendo uma implementa
 
 ```
 TRABALHO DE ANIMACOES - MERGE1 & COMB
-├── CombSortAnimacaoPO/
-│   ├── .mvn/
+
+├── CombSort/  (Projeto da Animação do Comb Sort)
 │   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/
-│   │   │   │   └── com/example/combsortanimacaopo/
-│   │   │   │       ├── HelloApplication.java  (Implementa a animação do Comb Sort)
-│   │   │   │       └── HelloController.java
-│   │   │   └── resources/
-│   │   │       └── com/example/combsortanimacaopo/
-│   │   │           └── hello-view.fxml
-│   ├── pom.xml
-│   └── mvnw  (Maven Wrapper para Linux/macOS)
-│   └── mvnw.cmd (Maven Wrapper para Windows)
+│   │   └── main/
+│   │       ├── java/
+│   │       │   └── com/example/combsortanimacaopo/
+│   │       │       ├── HelloApplication.java  (Lógica principal e animação do Comb Sort)
+│   │       │       └── HelloController.java   (Controlador para a interface gráfica)
+│   │       └── resources/
+│   │           └── com/example/combsortanimacaopo/
+│   │               └── hello-view.fxml        (Arquivo de layout da interface gráfica - JavaFX)
+│   ├── pom.xml                                (Arquivo de configuração do projeto Maven)
+│   ├── mvnw                                   (Maven Wrapper para Linux/macOS)
+│   └── mvnw.cmd                               (Maven Wrapper para Windows)
 │
-└── Animacao_Merge1_Task_Thread/
-    └── MERGE1TASKTHREADANIMACAO/
-        ├── .mvn/
-        ├── src/
-        │   ├── main/
-        │   │   ├── java/
-        │   │   │   └── com/example/merge1taskthreadanimacao/
-        │   │   │   │   └── HelloApplication.java  (Implementa a animação do Merge Sort 1ª Implementação)
-│   │   │   │   └── HelloController.java
-│   │   │   └── resources/
-│   │   │       └── com/example/merge1taskthreadanimacao/
-│   │   │           └── hello-view.fxml
-        ├── pom.xml
-        └── mvnw  (Maven Wrapper para Linux/macOS)
-        └── mvnw.cmd (Maven Wrapper para Windows)
+├── Merge1Sort/  (Projeto da Animação do Merge Sort - 1ª Implementação)
+│   ├── src/
+│   │   └── main/
+│   │       ├── java/
+│   │       │   └── com/example/merge1taskthreadanimacao/
+│   │       │       ├── HelloApplication.java  (Lógica principal e animação do Merge Sort)
+│   │       │       └── HelloController.java   (Controlador para a interface gráfica)
+│   │       └── resources/
+│   │           └── com/example/merge1taskthreadanimacao/
+│   │               └── hello-view.fxml        (Arquivo de layout da interface gráfica - JavaFX)
+│   ├── pom.xml                                (Arquivo de configuração do projeto Maven)
+│   ├── mvnw                                   (Maven Wrapper para Linux/macOS)
+│   └── mvnw.cmd                               (Maven Wrapper para Windows)
 ```
